@@ -4,14 +4,22 @@ import Crop from './Crop';
 
 
 function CropList(){
+  const flex = {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexWrap: 'wrap'
+  };
   return (
     <div>
-      {masterCropList.map((crop, index) =>
-        <Crop
-          month={crop.month}
-          selection={crop.selection}
-          key={index}/>
-      )}
+      <div style={flex}>
+        {masterCropList.map((crop, index) =>
+          <Crop
+            month={crop.month}
+            selection={crop.selection}
+            key={index}/>
+        )}
+      </div>
     </div>
   );
 }
